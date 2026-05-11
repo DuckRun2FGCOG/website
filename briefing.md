@@ -4,7 +4,7 @@
 
 **Full name**: Full Gospel Church of God – Duck Run 2  
 **Abbreviation**: FGCOG  
-**Location**: Duck Run 2, Cayo District, Belize  
+**Location**: Duck Run 2, Cayo District, Belize  (<https://maps.app.goo.gl/vCCnfgUzC3SFZ5gM8>)  
 **Denomination**: Full Gospel Church of God (FGCOG) — a Pentecostal denomination with a significant national presence in Belize  
 **Pastor**: Ismael Rodriguez (lead pastor, initiator of this website project)  
 **National body**: Full Gospel Church of God Belize (Facebook: facebook.com/fgcogbz, headquartered in Belmopan)
@@ -30,7 +30,7 @@ Use this as the structural and technical reference.
 
 ### This project's repo
 
-** Repo ***: https://github.com/DuckRun2FGCOG/website
+**Repo**: https://github.com/DuckRun2FGCOG/website
 
 ### Hosting
 
