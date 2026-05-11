@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if pageTitle %}{{ pageTitle }} – {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ site.description[lang] }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+</head>
+<body>
+
+  {% include "nav.njk" %}
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="{{ '/assets/js/main.js' | url }}"></script>
+</body>
+</html>
