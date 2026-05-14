@@ -1,0 +1,35 @@
+---
+layout: base.njk
+pageTitle: Contacto
+navPage: contact
+altUrl: /en/contact/
+permalink: /es/contacto/
+---
+
+<section class="hero hero--small">
+  <div class="container">
+    <h1>{{ t.contact.title }}</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid card-grid--narrow">
+      <div class="card">
+        <h2>{{ t.contact.address }}</h2>
+        <p>{{ t.contact.addressText }}</p>
+      </div>
+
+      <div class="card">
+        <h2>{{ t.footer.national }}</h2>
+        <p>
+          <a href="https://www.facebook.com/fgcogbz" target="_blank" rel="noopener">
+            {{ t.contact.nationalFb }}
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <p class="placeholder-text">{{ t.contact.comingSoon }}</p>
+  </div>
+</section>
