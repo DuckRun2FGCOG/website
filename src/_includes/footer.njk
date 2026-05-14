@@ -1,10 +1,40 @@
-<footer class="site-footer">
+<footer class="footer">
   <div class="container">
-    <p class="footer-name">{{ site.name }}</p>
-    <p class="footer-address">{{ t.footer.address }}</p>
-    <p class="footer-national">
-      <a href="https://www.facebook.com/fgcogbz" target="_blank" rel="noopener">{{ t.footer.national }}</a>
-    </p>
-    <p class="footer-copy">&copy; {{ year }} {{ site.name }}. {{ t.footer.rights }}</p>
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="{{ "/assets/images/logo-mark.png" | url }}" class="mark" alt="" aria-hidden="true" width="56" height="56">
+          <div class="text">
+            Full Gospel<br>Church of God
+            <small>Duck Run 2</small>
+          </div>
+        </div>
+        <p>{{ locale.footer.tag }}</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ locale.footer.addr_h }}</h4>
+        <p>{{ locale.contact.fields.addr_val }}</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ locale.footer.hours_h }}</h4>
+        {% for h in locale.footer.hours %}
+          <p>{{ h }}</p>
+        {% endfor %}
+      </div>
+
+      <div class="footer-col">
+        <h4>{{ locale.footer.links_h }}</h4>
+        <a href="https://www.facebook.com/fgcogbz" target="_blank" rel="noreferrer">{{ locale.contact.fields.denom_val }}</a>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+      <span>{{ locale.footer.copy }}</span>
+      <span>{{ locale.footer.built }}</span>
+    </div>
   </div>
 </footer>

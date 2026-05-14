@@ -1,18 +1,42 @@
-<header class="site-header">
-  <div class="container">
-    <a class="site-name" href="{{ ('/' + lang + '/') | url }}">{{ site.name }}</a>
+{% if locale.code == "es" %}
+  {% set esPageUrl = ("/" + locale.code + "/") | url if navPage == "home" else ("/" + locale.code + "/" + locale.slugs[navPage] + "/") | url %}
+  {% set enPageUrl = ("/" + locale.altCode + "/") | url if navPage == "home" else ("/" + locale.altCode + "/" + locale.altSlugs[navPage] + "/") | url %}
+{% else %}
+  {% set enPageUrl = ("/" + locale.code + "/") | url if navPage == "home" else ("/" + locale.code + "/" + locale.slugs[navPage] + "/") | url %}
+  {% set esPageUrl = ("/" + locale.altCode + "/") | url if navPage == "home" else ("/" + locale.altCode + "/" + locale.altSlugs[navPage] + "/") | url %}
+{% endif %}
 
-    <button class="nav-toggle" aria-label="{{ t.nav.toggleMenu }}" aria-expanded="false" aria-controls="main-nav">
-      <span class="hamburger"></span>
+<header class="topbar">
+  <div class="topbar-inner container">
+
+    <a class="brand" href="{{ ("/" + locale.code + "/") | url }}">
+      <img src="{{ "/assets/images/logo-mark.png" | url }}" class="brand-mark" alt="" aria-hidden="true" width="44" height="44">
+      <div class="brand-name">
+        <span class="row1">Full Gospel</span>
+        <span class="row2">Duck Run 2, Cayo</span>
+      </div>
+    </a>
+
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a class="nav-link{% if navPage == "home" %} active{% endif %}" href="{{ ("/" + locale.code + "/") | url }}">{{ locale.nav.home }}</a>
+      <a class="nav-link{% if navPage == "about" %} active{% endif %}" href="{{ ("/" + locale.code + "/" + locale.slugs.about + "/") | url }}">{{ locale.nav.about }}</a>
+      <a class="nav-link{% if navPage == "visit" %} active{% endif %}" href="{{ ("/" + locale.code + "/" + locale.slugs.visit + "/") | url }}">{{ locale.nav.visit }}</a>
+      <a class="nav-link{% if navPage == "gallery" %} active{% endif %}" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">{{ locale.nav.gallery }}</a>
+      <a class="nav-link{% if navPage == "contact" %} active{% endif %}" href="{{ ("/" + locale.code + "/" + locale.slugs.contact + "/") | url }}">{{ locale.nav.contact }}</a>
+    </nav>
+
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <a class="lang-btn{% if locale.code == "es" %} on{% endif %}" href="{{ esPageUrl }}" lang="es" hreflang="es">ES</a>
+      <a class="lang-btn{% if locale.code == "en" %} on{% endif %}" href="{{ enPageUrl }}" lang="en" hreflang="en">EN</a>
+    </div>
+
+    <button class="menu-btn" id="menu-btn" aria-label="{{ locale.nav.toggleMenu }}" aria-expanded="false" aria-controls="main-nav">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+        <rect y="0" width="22" height="2" fill="currentColor"/>
+        <rect y="7" width="22" height="2" fill="currentColor"/>
+        <rect y="14" width="22" height="2" fill="currentColor"/>
+      </svg>
     </button>
 
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="{{ ('/' + lang + '/') | url }}" {% if navPage == 'home' %}class="active"{% endif %}>{{ t.nav.home }}</a></li>
-        <li><a href="{{ ('/' + lang + '/' + t.nav.aboutSlug + '/') | url }}" {% if navPage == 'about' %}class="active"{% endif %}>{{ t.nav.about }}</a></li>
-        <li><a href="{{ ('/' + lang + '/' + t.nav.contactSlug + '/') | url }}" {% if navPage == 'contact' %}class="active"{% endif %}>{{ t.nav.contact }}</a></li>
-      </ul>
-      <a class="lang-switch" href="{{ altUrl | url }}" lang="{{ altLang }}">{{ altLangLabel }}</a>
-    </nav>
   </div>
 </header>
