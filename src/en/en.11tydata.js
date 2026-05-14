@@ -17,7 +17,10 @@ module.exports = {
       heroText:
         "We are a Christian congregation in Duck Run 2, Cayo District, Belize. Everyone is welcome.",
       services: "Service Times",
-      servicesTbd: "Service schedule coming soon.",
+      servicesSchedule: [
+        { day: "Wednesday", time: "7:00 PM – 8:30 PM" },
+        { day: "Sunday",    time: "7:00 PM – 7:30 PM" },
+      ],
       location: "How to Find Us",
       locationText:
         "We are located in Duck Run 2, Cayo District, Belize, south of Spanish Lookout.",

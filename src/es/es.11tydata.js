@@ -17,7 +17,10 @@ module.exports = {
       heroText:
         "Somos una congregación cristiana en Duck Run 2, Distrito de Cayo, Belice. Todos son bienvenidos.",
       services: "Horarios de Culto",
-      servicesTbd: "Los horarios de culto serán publicados próximamente.",
+      servicesSchedule: [
+        { day: "Miércoles", time: "7:00 PM – 8:30 PM" },
+        { day: "Domingo",   time: "7:00 PM – 7:30 PM" },
+      ],
       location: "¿Cómo Llegar?",
       locationText:
         "Nos encontramos en Duck Run 2, Distrito de Cayo, Belice, al sur de Spanish Lookout.",

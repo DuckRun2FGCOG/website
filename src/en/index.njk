@@ -15,7 +15,11 @@ altUrl: /es/
 <section class="section">
   <div class="container">
     <h2>{{ t.home.services }}</h2>
-    <p class="placeholder-text">{{ t.home.servicesTbd }}</p>
+    <ul class="schedule">
+      {% for item in t.home.servicesSchedule %}
+      <li><span class="schedule-day">{{ item.day }}</span><span class="schedule-time">{{ item.time }}</span></li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
