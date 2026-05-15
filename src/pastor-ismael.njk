@@ -1,0 +1,92 @@
+---
+layout: base.njk
+pagination:
+  data: i18n
+  size: 1
+  alias: locale
+permalink: "/{{ locale.code }}/{{ locale.slugs.pastor_ismael }}/"
+navPage: pastor_ismael
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  pageTitle: "{{ locale.pastor_ismael.name }}"
+---
+
+<div class="page-head">
+  <div class="container">
+    <p class="eyebrow">{{ locale.pastor_ismael.eyebrow }}</p>
+    <h1>{{ locale.pastor_ismael.name }}</h1>
+  </div>
+</div>
+
+<section class="section section-paper">
+  <div class="container">
+
+    <div class="pastor-page-hero">
+      <div class="pastor-page-photo">
+        <img src="{{ "/assets/images/ismael.png" | url }}" alt="{{ locale.pastor_ismael.name }}" style="{{ locale.pastor_ismael.photo_style }}">
+      </div>
+      <div class="pastor-page-body">
+        <p class="eyebrow" style="margin-bottom:12px;">{{ locale.pastor_ismael.profile_label }}</p>
+        <p>{{ locale.pastor_ismael.profile }}</p>
+      </div>
+    </div>
+
+    <div class="about-cols" style="margin-top:clamp(40px,5vw,64px);">
+      <div class="label">{{ locale.pastor_ismael.info_label }}</div>
+      <div class="body">
+        <div class="pastor-info-grid">
+          {% for item in locale.pastor_ismael.info %}
+          <div class="pastor-info-item">
+            <span class="pastor-info-label">{{ item.label }}</span>
+            <span class="pastor-info-value">{{ item.value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_ismael.languages_label }}</div>
+      <div class="body">
+        <div class="pastor-langs">
+          {% for lang in locale.pastor_ismael.languages %}
+          <span class="pastor-lang">{{ lang }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_ismael.formation_label }}</div>
+      <div class="body">
+        {% for item in locale.pastor_ismael.formation %}
+        <div class="pastor-edu-item">
+          <p class="pastor-edu-school">{{ item.school }}</p>
+          <p class="pastor-edu-degree">{{ item.degree }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_ismael.experience_label }}</div>
+      <div class="body">
+        {% for item in locale.pastor_ismael.experience %}
+        <div class="pastor-exp-item">
+          <p class="pastor-exp-role">{{ item.role }}</p>
+          <p class="pastor-exp-meta">{{ item.org }} · {{ item.period }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="verse">
+  <div class="container">
+    <div class="verse-mark">"</div>
+    <p class="verse-text">{{ locale.pastor_ismael.verse }}</p>
+    <p class="verse-cite">{{ locale.pastor_ismael.verse_cite }}</p>
+  </div>
+</section>

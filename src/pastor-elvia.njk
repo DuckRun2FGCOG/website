@@ -1,0 +1,91 @@
+---
+layout: base.njk
+pagination:
+  data: i18n
+  size: 1
+  alias: locale
+permalink: "/{{ locale.code }}/{{ locale.slugs.pastor_elvia }}/"
+navPage: pastor_elvia
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  pageTitle: "{{ locale.pastor_elvia.name }}"
+---
+
+<div class="page-head">
+  <div class="container">
+    <p class="eyebrow">{{ locale.pastor_elvia.eyebrow }}</p>
+    <h1>{{ locale.pastor_elvia.name }}</h1>
+  </div>
+</div>
+
+<section class="section section-paper">
+  <div class="container">
+
+    <div class="pastor-page-hero">
+      <div class="pastor-page-photo">
+        <img src="{{ "/assets/images/elvia.png" | url }}" alt="{{ locale.pastor_elvia.name }}" style="{{ locale.pastor_elvia.photo_style }}">
+      </div>
+      <div class="pastor-page-body">
+        <p class="eyebrow" style="margin-bottom:12px;">{{ locale.pastor_elvia.profile_label }}</p>
+        <p>{{ locale.pastor_elvia.profile }}</p>
+      </div>
+    </div>
+
+    <div class="about-cols" style="margin-top:clamp(40px,5vw,64px);">
+      <div class="label">{{ locale.pastor_elvia.info_label }}</div>
+      <div class="body">
+        <div class="pastor-info-grid">
+          {% for item in locale.pastor_elvia.info %}
+          <div class="pastor-info-item">
+            <span class="pastor-info-label">{{ item.label }}</span>
+            <span class="pastor-info-value">{{ item.value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_elvia.languages_label }}</div>
+      <div class="body">
+        <div class="pastor-langs">
+          {% for lang in locale.pastor_elvia.languages %}
+          <span class="pastor-lang">{{ lang }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_elvia.education_label }}</div>
+      <div class="body">
+        {% for item in locale.pastor_elvia.education %}
+        <div class="pastor-edu-item">
+          <p class="pastor-edu-degree">{{ item }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="about-cols">
+      <div class="label">{{ locale.pastor_elvia.experience_label }}</div>
+      <div class="body">
+        {% for item in locale.pastor_elvia.experience %}
+        <div class="pastor-exp-item">
+          <p class="pastor-exp-role">{{ item.role }}</p>
+          {% if item.period %}<p class="pastor-exp-meta">{{ item.period }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="verse">
+  <div class="container">
+    <div class="verse-mark">"</div>
+    <p class="verse-text">{{ locale.pastor_elvia.verse }}</p>
+    <p class="verse-cite">{{ locale.pastor_elvia.verse_cite }}</p>
+  </div>
+</section>

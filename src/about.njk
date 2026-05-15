@@ -46,6 +46,7 @@ eleventyComputed:
         <p class="role">{{ pastor.role }}</p>
         <p class="bio">{{ pastor.bio }}</p>
         <p class="quote">{{ pastor.quote }}</p>
+        <a class="pastor-more-link" href="{{ ('/' + locale.code + '/' + pastor.page_slug + '/') | url }}">{{ locale.about.pastor_more }} →</a>
       </div>
     </div>
     {% endfor %}
