@@ -36,36 +36,6 @@
   --gutter: clamp(20px, 4vw, 56px);
 }
 
-/* Logo-led palette: cream + dark brown + saturated red, no ochre */
-[data-palette="logo"] {
-  --bg: #F6F0E2;
-  --bg-2: #ECE2CE;
-  --bg-3: #DCCEB1;
-  --paper: #FFFBF1;
-  --ink: #16100D;
-  --ink-2: #2C1F1A;
-  --ink-3: #5C4438;
-  --rule: #C9B998;
-  --accent: #B73A28;
-  --accent-ink: #2C1F1A;
-  --ochre: #B73A28;
-}
-
-/* Navy-warmed: navy as primary, cream paper, red accent from logo */
-[data-palette="navy"] {
-  --bg: #F4EDDF;
-  --bg-2: #E8DEC8;
-  --bg-3: #1A2A48;
-  --paper: #FBF6EB;
-  --ink: #0F1A2E;
-  --ink-2: #1A2A48;
-  --ink-3: #4A5A78;
-  --rule: #C9B998;
-  --brown: #1A2A48;
-  --brown-2: #2A3A5A;
-  --accent: #B73A28;
-  --accent-ink: #1A2A48;
-}
 
 /* ============================================
    Base
@@ -326,71 +296,6 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   line-height: 1.55;
 }
 
-/* Hero — split layout variant */
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 0;
-  min-height: clamp(520px, 80vh, 720px);
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-}
-.hero-split-left {
-  padding: clamp(48px, 6vw, 96px) clamp(32px, 4vw, 64px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right: 1px solid var(--rule);
-}
-.hero-split-right {
-  background-size: cover;
-  background-position: center;
-  min-height: 360px;
-}
-.hero-split h1 {
-  font-size: clamp(48px, 6.4vw, 96px);
-  line-height: 0.96;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
-}
-.hero-split h1 em {
-  font-style: italic;
-  color: var(--red);
-  font-weight: 400;
-}
-@media (max-width: 800px) {
-  .hero-split { grid-template-columns: 1fr; }
-  .hero-split-left { border-right: 0; border-bottom: 1px solid var(--rule); }
-}
-
-/* Hero — typographic only */
-.hero-typo {
-  padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 120px);
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-  position: relative;
-  overflow: hidden;
-}
-.hero-typo h1 {
-  font-size: clamp(64px, 12vw, 200px);
-  line-height: 0.86;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-}
-.hero-typo h1 em {
-  font-style: italic;
-  color: var(--red);
-}
-.hero-typo .watermark {
-  position: absolute;
-  right: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(360px, 50vw, 640px);
-  opacity: 0.08;
-  pointer-events: none;
-}
 
 /* ============================================
    Sections

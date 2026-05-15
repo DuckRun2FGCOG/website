@@ -9,13 +9,13 @@ navPage: home
 eleventyExcludeFromCollections: true
 ---
 
-{# Hero #}
+{# Hero — Foto layout #}
 <section class="hero">
-  <div class="hero-photo" style="background-image: url('{{ "/assets/images/exterior-logo.jpg" | url }}');">
+  <div class="hero-photo" style="background-image: url('{{ "/assets/images/exterior-street.jpg" | url }}');">
     <div class="hero-photo-inner">
       <div class="container">
         <p class="hero-eyebrow">{{ locale.home.eyebrow }}</p>
-        <h1 class="hero-title">{{ locale.home.title_a }}<br><em>{{ locale.home.title_em }}</em></h1>
+        <h1 class="hero-title">{{ locale.home.title_a }} <em>{{ locale.home.title_em }}</em>.</h1>
         <p class="hero-sub">{{ locale.home.sub }}</p>
       </div>
     </div>
@@ -23,16 +23,18 @@ eleventyExcludeFromCollections: true
 </section>
 
 {# Service times #}
-<section class="services section-paper">
+<section class="services">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" style="margin-bottom: 56px; padding-top: clamp(60px, 7vw, 100px);">
       <span class="eyebrow">{{ locale.home.services_eyebrow }}</span>
       <div>
         <h2>{{ locale.home.services_title }}</h2>
-        <p class="lede" style="margin-top:16px;">{{ locale.home.services_lede }}</p>
+        <p class="lede" style="margin-top: 16px;">{{ locale.home.services_lede }}</p>
       </div>
     </div>
-    <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
+  </div>
+  <div class="container">
+    <div class="services-grid" style="border: 1px solid var(--rule); border-radius: 2px; margin-bottom: clamp(60px, 7vw, 100px); background: var(--paper); grid-template-columns: repeat(2, 1fr);">
       {% for svc in locale.home.services %}
       <div class="service-card">
         <p class="service-day">{{ svc.day }}</p>
@@ -50,17 +52,19 @@ eleventyExcludeFromCollections: true
   <div class="container">
     <div class="welcome">
       <div class="welcome-body">
-        <p class="eyebrow" style="margin-bottom:20px;">{{ locale.home.welcome_eyebrow }}</p>
-        <h2>{{ locale.home.welcome_title_a }}<em style="font-style:italic;color:var(--red);">{{ locale.home.welcome_title_em }}</em>{{ locale.home.welcome_title_b }}</h2>
-        <p style="margin-top:32px;">{{ locale.home.welcome_p1 }}</p>
+        <p class="eyebrow" style="margin-bottom: 18px;">{{ locale.home.welcome_eyebrow }}</p>
+        <h2 style="margin-bottom: 32px;">
+          {{ locale.home.welcome_title_a }}<em style="color: var(--red); font-style: italic;">{{ locale.home.welcome_title_em }}</em>{{ locale.home.welcome_title_b }}
+        </h2>
+        <p>{{ locale.home.welcome_p1 }}</p>
         <p>{{ locale.home.welcome_p2 }}</p>
-        <a class="btn" href="{{ ("/" + locale.code + "/" + locale.slugs.about + "/") | url }}" style="margin-top:24px;">
+        <a class="btn" href="{{ ("/" + locale.code + "/" + locale.slugs.about + "/") | url }}" style="margin-top: 16px;">
           {{ locale.home.welcome_cta }} <span class="arrow">→</span>
         </a>
       </div>
       <div class="welcome-aside">
-        <img src="{{ "/assets/images/congregation-seated.jpg" | url }}" alt="Congregation seated during service" width="600" height="750">
-        <p class="caption">Duck Run 2, Cayo · Belice</p>
+        <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Congregation eating together" width="600" height="750">
+        <p class="caption">Cena de celebración · Duck Run 2</p>
       </div>
     </div>
   </div>
@@ -76,47 +80,46 @@ eleventyExcludeFromCollections: true
 </section>
 
 {# Gallery strip #}
-<section class="section section-paper">
+<section class="section">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">{{ locale.home.gallery_eyebrow }}</span>
       <h2>{{ locale.home.gallery_title }}</h2>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item g1">
-        <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship and singing" loading="lazy">
-        <span class="gcap">{{ locale.home.gallery_eyebrow }}</span>
-      </div>
-      <div class="gallery-item g2">
-        <img src="{{ "/assets/images/choir.jpg" | url }}" alt="Church choir" loading="lazy">
-      </div>
-      <div class="gallery-item g3">
+      <a class="gallery-item g1" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Sanctuary" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}El santuario{% else %}The sanctuary{% endif %}</span>
+      </a>
+      <a class="gallery-item g2" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}Adoración{% else %}Worship{% endif %}</span>
+      </a>
+      <a class="gallery-item g3" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/exterior-right.jpg" | url }}" alt="Covered patio" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}Patio cubierto{% else %}Covered patio{% endif %}</span>
+      </a>
+      <a class="gallery-item g4" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
         <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Fellowship meal" loading="lazy">
-      </div>
-      <div class="gallery-item g4">
-        <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Church sanctuary" loading="lazy">
-      </div>
-      <div class="gallery-item g5">
-        <img src="{{ "/assets/images/sanctuary-side.jpg" | url }}" alt="Sanctuary side view" loading="lazy">
-      </div>
-    </div>
-    <div style="margin-top:40px;">
-      <a class="btn btn-ghost" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        {{ locale.home.gallery_title }} <span class="arrow">→</span>
+        <span class="gcap">{% if locale.code == "es" %}Compartir{% else %}Sharing a meal{% endif %}</span>
+      </a>
+      <a class="gallery-item g5" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/exterior-field.jpg" | url }}" alt="The grounds" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}El terreno{% else %}The grounds{% endif %}</span>
       </a>
     </div>
   </div>
 </section>
 
 {# Visit preview #}
-<section class="section">
+<section class="section section-paper">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">{{ locale.home.visit_eyebrow }}</span>
       <div>
         <h2>{{ locale.home.visit_title }}</h2>
-        <p class="lede" style="margin-top:16px;">{{ locale.home.visit_lede }}</p>
-        <a class="btn" href="{{ ("/" + locale.code + "/" + locale.slugs.visit + "/") | url }}" style="margin-top:24px;">
+        <p class="lede" style="margin-top: 16px;">{{ locale.home.visit_lede }}</p>
+        <a class="btn btn-ghost" href="{{ ("/" + locale.code + "/" + locale.slugs.visit + "/") | url }}" style="margin-top: 24px;">
           {{ locale.home.visit_cta }} <span class="arrow">→</span>
         </a>
       </div>
@@ -125,7 +128,7 @@ eleventyExcludeFromCollections: true
 </section>
 
 {# Location #}
-<section class="section section-paper">
+<section class="section">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">{{ locale.home.location_eyebrow }}</span>
@@ -133,10 +136,10 @@ eleventyExcludeFromCollections: true
     </div>
     <div class="location">
       <div class="location-text">
-        <h3>{{ locale.home.location_title }}</h3>
-        <p class="addr">{{ locale.home.location_addr }}</p>
-        <p class="note">{{ locale.home.location_note }}</p>
-        <a class="btn" href="https://maps.app.goo.gl/vCCnfgUzC3SFZ5gM8" target="_blank" rel="noreferrer" style="margin-top:28px;">
+        <div class="eyebrow" style="margin-bottom: 16px;">Duck Run 2 · Cayo</div>
+        <div class="addr">{{ locale.home.location_addr }}</div>
+        <p class="note" style="margin-top: 24px;">{{ locale.home.location_note }}</p>
+        <a class="btn" href="https://maps.app.goo.gl/vCCnfgUzC3SFZ5gM8" target="_blank" rel="noreferrer" style="margin-top: 24px;">
           {{ locale.home.location_cta }} <span class="arrow">→</span>
         </a>
       </div>
