@@ -34,6 +34,18 @@ eleventyComputed:
     </div>
     {% endfor %}
 
+    {# Vision / Mission #}
+    <div class="vm-grid" style="margin-top:clamp(48px,6vw,80px);">
+      <div class="vm-card">
+        <div class="vm-label">{{ locale.about.vision_eyebrow }}:</div>
+        <div class="vm-text">{{ locale.about.vision }}</div>
+      </div>
+      <div class="vm-card">
+        <div class="vm-label">{{ locale.about.mission_eyebrow }}:</div>
+        <div class="vm-text">{{ locale.about.mission }}</div>
+      </div>
+    </div>
+
     {# Pastor cards #}
     <p class="eyebrow" style="margin-top:clamp(48px,6vw,80px); margin-bottom:0;">{{ locale.about.pastors_eyebrow }}</p>
     {% for pastor in locale.about.pastors %}
@@ -65,7 +77,8 @@ eleventyComputed:
       <div class="belief">
         <p class="ix">{{ loop.index }}</p>
         <h4>{{ belief.h }}</h4>
-        <p>{{ belief.b }}</p>
+        {% if belief.b %}<p>{{ belief.b }}</p>{% endif %}
+        {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
       </div>
       {% endfor %}
     </div>
