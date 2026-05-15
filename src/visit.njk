@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pagination:
+  data: i18n
+  size: 1
+  alias: locale
+permalink: "/{{ locale.code }}/{{ locale.slugs.visit }}/"
+navPage: visit
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  pageTitle: "{{ locale.nav.visit }}"
+---
+
+{# Page header #}
+<div class="page-head">
+  <div class="container">
+    <p class="eyebrow">{{ locale.visit.eyebrow }}</p>
+    <h1>{{ locale.visit.title_a }}<em>{{ locale.visit.title_em }}</em>{{ locale.visit.title_b }}</h1>
+    <p class="sub">{{ locale.visit.sub }}</p>
+  </div>
+</div>
+
+{# Steps #}
+<section class="section section-paper">
+  <div class="container">
+    <div class="visit-grid">
+      {% for step in locale.visit.steps %}
+      <div class="visit-card">
+        <p class="num">{{ step.n }}</p>
+        <h3>{{ step.h }}</h3>
+        <p>{{ step.b }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Common questions #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ locale.visit.qs_eyebrow }}</span>
+      <div></div>
+    </div>
+    {% for item in locale.visit.qs %}
+    <div class="contact-item" style="max-width:760px;">
+      <p class="lbl">{{ item.q }}</p>
+      <p style="font-family:var(--serif);font-size:clamp(18px,1.5vw,22px);color:var(--ink);margin-top:8px;">{{ item.a }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+layout: base.njk
+pagination:
+  data: i18n
+  size: 1
+  alias: locale
+permalink: "/{{ locale.code }}/{{ locale.slugs.gallery }}/"
+navPage: gallery
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  pageTitle: "{{ locale.nav.gallery }}"
+---
+
+{# Page header #}
+<div class="page-head">
+  <div class="container">
+    <p class="eyebrow">{{ locale.gallery.eyebrow }}</p>
+    <h1>{{ locale.gallery.title_a }}<em>{{ locale.gallery.title_em }}</em>{{ locale.gallery.title_b }}</h1>
+    <p class="sub">{{ locale.gallery.sub }}</p>
+  </div>
+</div>
+
+{# Full gallery #}
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <img src="{{ "/assets/images/exterior-logo.jpg" | url }}" alt="Church exterior with Full Gospel logo" loading="lazy">
+        <span class="gcap">Duck Run 2</span>
+      </div>
+      <div class="gallery-item g2">
+        <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship and singing" loading="lazy">
+      </div>
+      <div class="gallery-item g3">
+        <img src="{{ "/assets/images/congregation-seated.jpg" | url }}" alt="Congregation seated" loading="lazy">
+      </div>
+      <div class="gallery-item g4">
+        <img src="{{ "/assets/images/choir.jpg" | url }}" alt="Church choir" loading="lazy">
+      </div>
+      <div class="gallery-item g5">
+        <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Fellowship meal after service" loading="lazy">
+      </div>
+    </div>
+
+    <div class="gallery-grid" style="margin-top:16px;">
+      <div class="gallery-item g1">
+        <img src="{{ "/assets/images/sanctuary-view.jpg" | url }}" alt="Sanctuary interior wide view" loading="lazy">
+        <span class="gcap">Sanctuary</span>
+      </div>
+      <div class="gallery-item g2">
+        <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Sanctuary interior center" loading="lazy">
+      </div>
+      <div class="gallery-item g3">
+        <img src="{{ "/assets/images/sanctuary-side.jpg" | url }}" alt="Sanctuary side angle" loading="lazy">
+      </div>
+      <div class="gallery-item g4">
+        <img src="{{ "/assets/images/exterior-street.jpg" | url }}" alt="Church exterior from street" loading="lazy">
+      </div>
+      <div class="gallery-item g5">
+        <img src="{{ "/assets/images/exterior-field.jpg" | url }}" alt="Church exterior from field" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>

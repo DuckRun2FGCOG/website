@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
+    "build": "node scripts/check-i18n.js && eleventy",
+    "start": "node scripts/check-i18n.js && eleventy --serve",
     "clean": "rm -rf _site"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "sharp": "^0.34.5"
   }
 }
