@@ -75,16 +75,16 @@ eleventyComputed:
     <div class="beliefs">
       {% for belief in locale.about.beliefs %}
       <div class="belief">
-        <p class="ix">{{ loop.index }}</p>
-        <h4>{{ belief.h }}</h4>
-        {% if belief.refs or belief.verses %}
-        <details class="belief-details">
-          <summary>{{ locale.about.verses_toggle }}</summary>
-          <div class="belief-verses">
-            {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
-            {% if belief.verses %}<p class="verse-text">{{ belief.verses }}</p>{% endif %}
-          </div>
-        </details>
+        <div class="belief-head">
+          <p class="ix">{{ loop.index }}</p>
+          <h4>{{ belief.h }}</h4>
+        </div>
+        {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
+        {% if belief.verses %}
+        <div class="belief-verses-wrap" aria-expanded="false">
+          <p class="verse-text">{{ belief.verses }}</p>
+        </div>
+        <button class="belief-toggle" data-more="{{ locale.about.verses_toggle }}" data-less="{{ locale.about.verses_less }}" aria-expanded="false">{{ locale.about.verses_toggle }}</button>
         {% endif %}
       </div>
       {% endfor %}

@@ -120,6 +120,7 @@ module.exports = [
       beliefs_eyebrow: "Principios Doctrinales",
       beliefs_title: "Compromisos doctrinales",
       verses_toggle: "Ver versículos",
+      verses_less: "Ver menos",
       beliefs: [
         { h: "Arrepentimiento", refs: "Marcos 1:15; Lucas 13:3; Hechos 3:19.", verses: "[Texto de Marcos 1:15; Lucas 13:3; Hechos 3:19 — Reina Valera 1960, por agregar]" },
         { h: "Justificación", refs: "Romanos 5:1; Tito 3:7.", verses: "[Texto de Romanos 5:1; Tito 3:7 — Reina Valera 1960, por agregar]" },
@@ -399,6 +400,7 @@ module.exports = [
       beliefs_eyebrow: "Doctrinal Principles",
       beliefs_title: "Doctrinal commitments",
       verses_toggle: "Read verses",
+      verses_less: "Read less",
       beliefs: [
         { h: "Repentance", refs: "Mark 1:15; Luke 13:3; Acts 3:19.", verses: "[Text of Mark 1:15; Luke 13:3; Acts 3:19 — to be added]" },
         { h: "Justification", refs: "Romans 5:1; Titus 3:7.", verses: "[Text of Romans 5:1; Titus 3:7 — to be added]" },

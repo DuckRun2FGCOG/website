@@ -25,4 +25,14 @@
       }
     });
   }
+  // Belief verse expand/collapse
+  document.querySelectorAll(".belief-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var wrap = btn.previousElementSibling;
+      var expanded = wrap.getAttribute("aria-expanded") === "true";
+      wrap.setAttribute("aria-expanded", expanded ? "false" : "true");
+      btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+      btn.textContent = expanded ? btn.dataset.more : btn.dataset.less;
+    });
+  });
 })();
