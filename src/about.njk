@@ -34,18 +34,21 @@ eleventyComputed:
     </div>
     {% endfor %}
 
-    {# Pastor card #}
-    <div class="pastor-card" style="margin-top:clamp(48px,6vw,80px);">
-      <div class="pastor-photo" aria-label="Pastor Ismael Rodríguez — photo coming soon">
-        <span>Photo<br>coming soon</span>
+    {# Pastor cards #}
+    <p class="eyebrow" style="margin-top:clamp(48px,6vw,80px); margin-bottom:0;">{{ locale.about.pastors_eyebrow }}</p>
+    {% for pastor in locale.about.pastors %}
+    <div class="pastor-card">
+      <div class="pastor-photo">
+        <img src="{{ ('/assets/images/' + pastor.photo) | url }}" alt="{{ pastor.name }}" style="{{ pastor.photo_style }}">
       </div>
       <div class="pastor-body">
-        <p class="eyebrow" style="margin-bottom:12px;">{{ locale.about.pastor_eyebrow }}</p>
-        <p class="name">{{ locale.about.pastor_name }}</p>
-        <p class="role">{{ locale.about.pastor_role }}</p>
-        <p class="quote">{{ locale.about.pastor_quote }}</p>
+        <p class="name">{{ pastor.name }}</p>
+        <p class="role">{{ pastor.role }}</p>
+        <p class="bio">{{ pastor.bio }}</p>
+        <p class="quote">{{ pastor.quote }}</p>
       </div>
     </div>
+    {% endfor %}
   </div>
 </section>
 
