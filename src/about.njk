@@ -77,8 +77,15 @@ eleventyComputed:
       <div class="belief">
         <p class="ix">{{ loop.index }}</p>
         <h4>{{ belief.h }}</h4>
-        {% if belief.b %}<p>{{ belief.b }}</p>{% endif %}
-        {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
+        {% if belief.refs or belief.verses %}
+        <details class="belief-details">
+          <summary>{{ locale.about.verses_toggle }}</summary>
+          <div class="belief-verses">
+            {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
+            {% if belief.verses %}<p class="verse-text">{{ belief.verses }}</p>{% endif %}
+          </div>
+        </details>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
