@@ -890,49 +890,52 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   background: var(--paper);
   min-height: 140px;
 }
-.belief .ix {
+.belief-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.belief-head .ix {
   font-family: var(--serif);
   font-style: italic;
   color: var(--red);
   font-size: 18px;
-  margin-bottom: 18px;
+  flex-shrink: 0;
+  margin: 0;
 }
-.belief h4 { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
+.belief-head h4 { margin: 0; font-size: 15px; line-height: 1.4; }
 .belief p { font-size: 14px; color: var(--ink-3); margin: 0; line-height: 1.55; }
-
-/* Details toggle */
-.belief-details { margin-top: 14px; }
-.belief-details summary {
-  cursor: pointer;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  user-select: none;
-}
-.belief-details summary::-webkit-details-marker { display: none; }
-.belief-details summary::before {
-  content: "▶";
-  font-size: 9px;
-  transition: transform 0.2s ease;
-  display: inline-block;
-}
-.belief-details[open] summary::before { transform: rotate(90deg); }
-.belief-verses {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--rule);
-}
 .belief .refs {
   font-size: 12px;
   color: var(--ink-3);
   font-style: italic;
   line-height: 1.5;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
 }
+
+/* Verse expand/collapse */
+.belief-verses-wrap {
+  position: relative;
+  max-height: 4.2em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.belief-verses-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.8em;
+  background: linear-gradient(transparent, var(--paper));
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.belief-verses-wrap[aria-expanded="true"] {
+  max-height: 60em;
+}
+.belief-verses-wrap[aria-expanded="true"]::after { opacity: 0; }
 .belief .verse-text {
   font-size: 13px;
   color: var(--ink-2);
@@ -940,6 +943,27 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   font-style: italic;
   margin: 0;
 }
+.belief-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--sans);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.belief-toggle::before {
+  content: "▶";
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.belief-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
 @media (max-width: 800px) { .beliefs { grid-template-columns: 1fr; } }
 @media (min-width: 801px) and (max-width: 1000px) { .beliefs { grid-template-columns: 1fr 1fr; } }
 
