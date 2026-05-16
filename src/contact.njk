@@ -37,11 +37,11 @@ eleventyComputed:
         </div>
         <div class="contact-item">
           <p class="lbl">{{ locale.contact.fields.phone }}</p>
-          <p class="val" style="color:var(--ink-3);font-style:italic;">{{ locale.contact.fields.phone_val }}</p>
+          <p class="val"><a href="tel:+5016131697">{{ locale.contact.fields.phone_val }}</a></p>
         </div>
         <div class="contact-item">
           <p class="lbl">{{ locale.contact.fields.email }}</p>
-          <p class="val" style="color:var(--ink-3);font-style:italic;">{{ locale.contact.fields.email_val }}</p>
+          <p class="val"><a href="mailto:{{ locale.contact.fields.email_val }}">{{ locale.contact.fields.email_val }}</a></p>
         </div>
         <div class="contact-item">
           <p class="lbl">{{ locale.contact.fields.denom }}</p>
