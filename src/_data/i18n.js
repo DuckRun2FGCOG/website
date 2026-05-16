@@ -198,6 +198,8 @@ module.exports = [
       form_msg: "Tu mensaje",
       form_send: "Enviar mensaje",
       form_note: "Te responderemos en uno o dos días. Si es urgente, escríbenos por Facebook.",
+      form_success: "¡Mensaje enviado! Te respondemos pronto.",
+      form_error: "Hubo un error al enviar. Intenta de nuevo o escríbenos por Facebook.",
     },
     pastor_ismael: {
       eyebrow: "Pastor Principal",
@@ -478,6 +480,8 @@ module.exports = [
       form_msg: "Your message",
       form_send: "Send message",
       form_note: "We'll reply within a day or two. If it's urgent, message us on Facebook.",
+      form_success: "Message sent! We'll get back to you soon.",
+      form_error: "Something went wrong. Please try again or reach us on Facebook.",
     },
     pastor_ismael: {
       eyebrow: "Lead Pastor",
