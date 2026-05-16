@@ -24,41 +24,47 @@ eleventyComputed:
 <section class="section">
   <div class="container">
     <div class="gallery-grid">
-      <div class="gallery-item g1">
+      <div class="gallery-item g1 gallery-lightbox" data-src="{{ "/assets/images/exterior-logo.jpg" | url }}" role="button" tabindex="0" aria-label="Duck Run 2">
         <img src="{{ "/assets/images/exterior-logo.jpg" | url }}" alt="Church exterior with Full Gospel logo" loading="lazy">
         <span class="gcap">Duck Run 2</span>
       </div>
-      <div class="gallery-item g2">
+      <div class="gallery-item g2 gallery-lightbox" data-src="{{ "/assets/images/worship-singing.jpg" | url }}" role="button" tabindex="0" aria-label="Worship and singing">
         <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship and singing" loading="lazy">
       </div>
-      <div class="gallery-item g3">
+      <div class="gallery-item g3 gallery-lightbox" data-src="{{ "/assets/images/congregation-seated.jpg" | url }}" role="button" tabindex="0" aria-label="Congregation seated">
         <img src="{{ "/assets/images/congregation-seated.jpg" | url }}" alt="Congregation seated" loading="lazy">
       </div>
-      <div class="gallery-item g4">
+      <div class="gallery-item g4 gallery-lightbox" data-src="{{ "/assets/images/choir.jpg" | url }}" role="button" tabindex="0" aria-label="Church choir">
         <img src="{{ "/assets/images/choir.jpg" | url }}" alt="Church choir" loading="lazy">
       </div>
-      <div class="gallery-item g5">
+      <div class="gallery-item g5 gallery-lightbox" data-src="{{ "/assets/images/fellowship-meal.jpg" | url }}" role="button" tabindex="0" aria-label="Fellowship meal after service">
         <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Fellowship meal after service" loading="lazy">
       </div>
     </div>
 
     <div class="gallery-grid" style="margin-top:16px;">
-      <div class="gallery-item g1">
+      <div class="gallery-item g1 gallery-lightbox" data-src="{{ "/assets/images/sanctuary-view.jpg" | url }}" role="button" tabindex="0" aria-label="Sanctuary interior wide view">
         <img src="{{ "/assets/images/sanctuary-view.jpg" | url }}" alt="Sanctuary interior wide view" loading="lazy">
         <span class="gcap">Sanctuary</span>
       </div>
-      <div class="gallery-item g2">
+      <div class="gallery-item g2 gallery-lightbox" data-src="{{ "/assets/images/sanctuary-center.jpg" | url }}" role="button" tabindex="0" aria-label="Sanctuary interior center">
         <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Sanctuary interior center" loading="lazy">
       </div>
-      <div class="gallery-item g3">
+      <div class="gallery-item g3 gallery-lightbox" data-src="{{ "/assets/images/sanctuary-side.jpg" | url }}" role="button" tabindex="0" aria-label="Sanctuary side angle">
         <img src="{{ "/assets/images/sanctuary-side.jpg" | url }}" alt="Sanctuary side angle" loading="lazy">
       </div>
-      <div class="gallery-item g4">
+      <div class="gallery-item g4 gallery-lightbox" data-src="{{ "/assets/images/exterior-street.jpg" | url }}" role="button" tabindex="0" aria-label="Church exterior from street">
         <img src="{{ "/assets/images/exterior-street.jpg" | url }}" alt="Church exterior from street" loading="lazy">
       </div>
-      <div class="gallery-item g5">
+      <div class="gallery-item g5 gallery-lightbox" data-src="{{ "/assets/images/exterior-field.jpg" | url }}" role="button" tabindex="0" aria-label="Church exterior from field">
         <img src="{{ "/assets/images/exterior-field.jpg" | url }}" alt="Church exterior from field" loading="lazy">
       </div>
     </div>
   </div>
 </section>
+
+{# Lightbox overlay #}
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Full screen image" hidden>
+  <button class="lightbox-close" aria-label="Close">&#x2715;</button>
+  <img class="lightbox-img" src="" alt="">
+</div>

@@ -70,47 +70,6 @@ eleventyExcludeFromCollections: true
   </div>
 </section>
 
-{# Verse pull-quote #}
-<section class="verse">
-  <div class="container">
-    <div class="verse-mark">"</div>
-    <p class="verse-text">{{ locale.home.verse }}</p>
-    <p class="verse-cite">{{ locale.home.verse_cite }}</p>
-  </div>
-</section>
-
-{# Gallery strip #}
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">{{ locale.home.gallery_eyebrow }}</span>
-      <h2>{{ locale.home.gallery_title }}</h2>
-    </div>
-    <div class="gallery-grid">
-      <a class="gallery-item g1" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Sanctuary" loading="lazy">
-        <span class="gcap">{% if locale.code == "es" %}El santuario{% else %}The sanctuary{% endif %}</span>
-      </a>
-      <a class="gallery-item g2" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship" loading="lazy">
-        <span class="gcap">{% if locale.code == "es" %}Adoración{% else %}Worship{% endif %}</span>
-      </a>
-      <a class="gallery-item g3" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        <img src="{{ "/assets/images/exterior-right.jpg" | url }}" alt="Covered patio" loading="lazy">
-        <span class="gcap">{% if locale.code == "es" %}Patio cubierto{% else %}Covered patio{% endif %}</span>
-      </a>
-      <a class="gallery-item g4" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Fellowship meal" loading="lazy">
-        <span class="gcap">{% if locale.code == "es" %}Compartir{% else %}Sharing a meal{% endif %}</span>
-      </a>
-      <a class="gallery-item g5" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
-        <img src="{{ "/assets/images/exterior-field.jpg" | url }}" alt="The grounds" loading="lazy">
-        <span class="gcap">{% if locale.code == "es" %}El terreno{% else %}The grounds{% endif %}</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 {# Visit preview #}
 <section class="section section-paper">
   <div class="container">
@@ -155,6 +114,52 @@ eleventyExcludeFromCollections: true
           title="{{ locale.home.location_title }}"
         ></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+{# Verse pull-quote #}
+<section class="verse">
+  <div class="container">
+    <div class="verse-mark">"</div>
+    <p class="verse-text">{{ locale.home.verse }}</p>
+    <p class="verse-cite">{{ locale.home.verse_cite }}</p>
+  </div>
+</section>
+
+{# Gallery strip #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ locale.home.gallery_eyebrow }}</span>
+      <h2>{{ locale.home.gallery_title }}</h2>
+    </div>
+    <div class="gallery-grid">
+      <a class="gallery-item g1" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/sanctuary-center.jpg" | url }}" alt="Sanctuary" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}El santuario{% else %}The sanctuary{% endif %}</span>
+      </a>
+      <a class="gallery-item g2" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/worship-singing.jpg" | url }}" alt="Worship" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}Adoración{% else %}Worship{% endif %}</span>
+      </a>
+      <a class="gallery-item g3" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/exterior-right.jpg" | url }}" alt="Covered patio" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}Patio cubierto{% else %}Covered patio{% endif %}</span>
+      </a>
+      <a class="gallery-item g4" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/fellowship-meal.jpg" | url }}" alt="Fellowship meal" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}Compartir{% else %}Sharing a meal{% endif %}</span>
+      </a>
+      <a class="gallery-item g5" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        <img src="{{ "/assets/images/exterior-field.jpg" | url }}" alt="The grounds" loading="lazy">
+        <span class="gcap">{% if locale.code == "es" %}El terreno{% else %}The grounds{% endif %}</span>
+      </a>
+    </div>
+    <div style="margin-top: 32px; text-align: center;">
+      <a class="btn btn-ghost" href="{{ ("/" + locale.code + "/" + locale.slugs.gallery + "/") | url }}">
+        {{ locale.home.gallery_cta }} <span class="arrow">→</span>
+      </a>
     </div>
   </div>
 </section>
