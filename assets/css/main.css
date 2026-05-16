@@ -931,6 +931,51 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 
 /* ============================================
+   Vision / Mission cards
+   ============================================ */
+.vm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.vm-card {
+  display: flex;
+  align-items: stretch;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.vm-label {
+  background: var(--brown);
+  color: #fff;
+  padding: clamp(18px,2.5vw,28px) clamp(24px,3vw,40px);
+  min-width: clamp(100px, 14vw, 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(16px,1.5vw,20px);
+  text-align: center;
+  flex-shrink: 0;
+}
+.vm-text {
+  background: var(--accent);
+  color: #fff;
+  padding: clamp(18px,2.5vw,28px) clamp(24px,3vw,40px);
+  flex: 1;
+  font-weight: 500;
+  font-size: clamp(14px,1.3vw,17px);
+  line-height: 1.55;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .vm-card { flex-direction: column; }
+  .vm-label { min-width: 0; justify-content: flex-start; }
+}
+
+/* ============================================
    Beliefs grid
    ============================================ */
 .beliefs {
@@ -946,16 +991,84 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   border-right: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
+  display: flex;
+  flex-direction: column;
 }
-.belief .ix {
+.belief-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.belief-head .ix {
   font-family: var(--serif);
   font-style: italic;
   color: var(--red);
   font-size: 18px;
-  margin-bottom: 18px;
+  flex-shrink: 0;
+  margin: 0;
 }
-.belief h4 { margin-bottom: 8px; }
+.belief-head h4 { margin: 0; font-size: 15px; line-height: 1.4; }
 .belief p { font-size: 14px; color: var(--ink-3); margin: 0; line-height: 1.55; }
+.belief .refs {
+  font-size: 12px;
+  color: var(--ink-3);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+
+/* Verse expand/collapse */
+.belief .refs { margin-top: auto; padding-top: 10px; }
+.belief-verses-wrap {
+  position: relative;
+  max-height: 4.2em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.belief-verses-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.8em;
+  background: linear-gradient(transparent, var(--paper));
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.belief-verses-wrap[aria-expanded="true"] {
+  max-height: 60em;
+}
+.belief-verses-wrap[aria-expanded="true"]::after { opacity: 0; }
+.belief .verse-text {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0;
+}
+.belief-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--sans);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.belief-toggle::before {
+  content: "▶";
+  font-size: 9px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.belief-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
 @media (max-width: 800px) { .beliefs { grid-template-columns: 1fr; } }
 @media (min-width: 801px) and (max-width: 1000px) { .beliefs { grid-template-columns: 1fr 1fr; } }
 
