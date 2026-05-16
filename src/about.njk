@@ -34,6 +34,18 @@ eleventyComputed:
     </div>
     {% endfor %}
 
+    {# Vision / Mission #}
+    <div class="vm-grid" style="margin-top:clamp(48px,6vw,80px);">
+      <div class="vm-card">
+        <div class="vm-label">{{ locale.about.vision_eyebrow }}:</div>
+        <div class="vm-text">{{ locale.about.vision }}</div>
+      </div>
+      <div class="vm-card">
+        <div class="vm-label">{{ locale.about.mission_eyebrow }}:</div>
+        <div class="vm-text">{{ locale.about.mission }}</div>
+      </div>
+    </div>
+
     {# Pastor cards #}
     <p class="eyebrow" style="margin-top:clamp(48px,6vw,80px); margin-bottom:0;">{{ locale.about.pastors_eyebrow }}</p>
     {% for pastor in locale.about.pastors %}
@@ -63,9 +75,17 @@ eleventyComputed:
     <div class="beliefs">
       {% for belief in locale.about.beliefs %}
       <div class="belief">
-        <p class="ix">{{ loop.index }}</p>
-        <h4>{{ belief.h }}</h4>
-        <p>{{ belief.b }}</p>
+        <div class="belief-head">
+          <p class="ix">{{ loop.index }}</p>
+          <h4>{{ belief.h }}</h4>
+        </div>
+        {% if belief.refs %}<p class="refs">{{ belief.refs }}</p>{% endif %}
+        {% if belief.verses %}
+        <div class="belief-verses-wrap" aria-expanded="false">
+          <p class="verse-text">{{ belief.verses }}</p>
+        </div>
+        <button class="belief-toggle" data-more="{{ locale.about.verses_toggle }}" data-less="{{ locale.about.verses_less }}" aria-expanded="false">{{ locale.about.verses_toggle }}</button>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
